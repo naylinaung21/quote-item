@@ -1,0 +1,9 @@
+<main class="container">
+    <%= link_to sanitize("&larr; Back to poem books"), poem_books_path %>
+
+    <div class="header">
+        <h1>Edit Poem Book</h1>
+    </div>
+
+    <%= render "form", poem_book: @poem_book %>
+</main>

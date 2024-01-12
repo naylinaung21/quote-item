@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Poem Book One
+  writer: Writer One
+  price: 9.99
+
+two:
+  name: Poem Book Two
+  writer: Writer Two
+  price: 9.99

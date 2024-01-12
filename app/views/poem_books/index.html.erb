@@ -1,0 +1,9 @@
+<main class="container">
+  <div class="header">
+    <h1>Poem Books</h1>
+    <%= link_to "New Poem Book", new_poem_book_path, class: "btn btn--primary" %>
+  </div>
+
+  <%= render @poem_books %>
+
+</main>

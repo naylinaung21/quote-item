@@ -1,0 +1,13 @@
+<%= simple_form_for poem_book, html: { class: "quote form" } do |f| %>
+  <% if poem_book.errors.any? %>
+    <div class="error-message">
+      <%= poem_book.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+
+  <%= f.input :name, input_html: { autofocus: true } %>
+  <%= f.input :writer, input_html: { autofocus: true } %>
+  <%= f.input :price, input_html: { autofocus: true } %>
+  <%= link_to "Cancel", poem_books_path, class: "btn btn--light" %>
+  <%= f.submit class: "btn btn--secondary" %>
+<% end %>
