@@ -2,7 +2,7 @@ class PoemBooksController < ApplicationController
     before_action :set_poem_book, only: [ :show, :edit, :update, :destroy]
 
     def index
-        @poem_books = PoemBook.all
+        @poem_books = PoemBook.ordered
     end
 
     def show; end
@@ -17,6 +17,7 @@ class PoemBooksController < ApplicationController
         if @poem_book.save
             respond_to do |format|
                 format.html { redirect_to poem_books_path }
+                format.turbo_stream
             end
         else
             render :new, status: :unprocessable_entity
@@ -42,6 +43,7 @@ class PoemBooksController < ApplicationController
 
         respond_to do |format|
             format.html { redirect_to poem_books_path}
+            format.turbo_stream
         end
     end
 

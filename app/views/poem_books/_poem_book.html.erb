@@ -1,16 +1,20 @@
-<div class="quote">
-    <%= link_to poem_book.name, poem_book_path(poem_book) %>
-    <%= poem_book.writer %>
-    <%= poem_book.price %>
 
-    <div class="quote__actions">
-        <%= button_to "Delete",
-                    poem_book_path(poem_book),
-                    method: :delete,
-                    class: "btn btn--danger" %>
 
-        <%= link_to "Edit",
-                    edit_poem_book_path(poem_book),
-                    class: "btn btn--light" %>
+<%= turbo_frame_tag poem_book do %>
+    <div class="quote">
+        <%= link_to poem_book.name, poem_book_path(poem_book), data: { turbo_frame: "_top" } %>
+        <%= poem_book.writer %>
+        <%= poem_book.price %>
+
+        <div class="quote__actions">
+            <%= button_to "Delete",
+                        poem_book_path(poem_book),
+                        method: :delete,
+                        class: "btn btn--danger" %>
+
+            <%= link_to "Edit",
+                        edit_poem_book_path(poem_book),
+                        class: "btn btn--light" %>
+        </div>
     </div>
-</div>
+<% end %>
